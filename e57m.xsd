@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    vc:minVersion="1.1" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+    <xs:element name="e57m">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="E57root" maxOccurs="1" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>E57-root level metadata describes basic attributes about the entire file, such as the versionnumber of the file format or the number of 3D scans or 2D images contained in the file.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="guid" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>A globally unique identification (GUID) String for the current version of the file. The standard does not prescribe the format of the GUID. Suggestions listed in the standard include IETF RFC4122 UUIDs or combinations of make/model/serial number of the scanner plus creationdatetime for non-networked equipment.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="version" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>The version of the file format. The current version (as of November 2014) is 1.0.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="creation_datetime"
+                                type="xs:dateTime">
+                                <xs:annotation>
+                                    <xs:documentation>Date and time the file was created.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="coordinate_metadata" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Describes the Coordinate Reference System using the well-known text (WKT) specification as described in the Open Geospatial Consortiums's (OGC) specification for Coordinate Transformation Services.The WKT allows the 3D and 2D data stored in the file to be referenced in a standardized coordinate reference system.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="scan_count" type="xs:integer">
+                                <xs:annotation>
+                                    <xs:documentation>Number of single scans the file aggregates. Within the e57 file, a scan is described by a data3D object.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="image_count"
+                                type="xs:integer">
+                                <xs:annotation>
+                                    <xs:documentation>Number of 2D images the file contains. Within the e57 file, each 2D image is described by a Image2D object.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="scan_size"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Describes each scan by the following parameters: scanIndex number, number of Rows, number of Column, number of Points, number of groups, number of points per group, a boolean flag indicating whether the idElementName is ``columnIndex''.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="image_size"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Describes each image by the following parameters: imageIndex number, image projection type (e.g., spherical, pinhole), image encoding type, image width, image height, number of bytes in the image, image mask type , (e.g., for PNG masks), image visual type.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="1" name="e57scan">
+                    <xs:annotation>
+                        <xs:documentation>E57-scan-level metadata describes attributes about the scan.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="1" name="guid" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Global unique identifier for each scan element.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="name" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>A name for the 3D data as assigned by the user.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="original_guids"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>If the object has been modified, i.e., is a result of merging muliple scans during processing, this element contains the guid of one or more scansElement which the data originated from.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="description"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>A description of the scans as supplied by the user.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_vendor"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Manufacturer of scanner/sensor used to capture the scan.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_model"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Model name of scanner/sensor used to capture the scan.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_serial_number"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Serial number of scanner/sensor used to capture the scan.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_hardware_version"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Hardware version of scanner/sensor used to capture the scan.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_software_version"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Data collection version running on scanner/sensor used to capture the scan.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_firmware_version"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Firmware version running on scanner/sensor.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="temperature"
+                                type="xs:float">
+                                <xs:annotation>
+                                    <xs:documentation>Weather data. Ambient temperature as measured by the sensor of the camera at the point of capture, in degree Celsius.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="relative_humidity" type="xs:float">
+                                <xs:annotation>
+                                    <xs:documentation>Weather data. Relative humidity as measured by the sensor of the camera at point of capture, in percent.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="atmospheric_pressure"
+                                type="xs:float">
+                                <xs:annotation>
+                                    <xs:documentation>Weather data. Atmospheric pressure as measured by the sensor of the camera, at point of capture, in Pascal.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element default="xs:dateTime" maxOccurs="1" minOccurs="0"
+                                name="acquisition_start">
+                                <xs:annotation>
+                                    <xs:documentation>Start date and time of scans acquisition, as an ISO8601 date.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element default="xs:dateTime" maxOccurs="1" minOccurs="0"
+                                name="acquisition_end">
+                                <xs:annotation>
+                                    <xs:documentation>End date and time of scans acquisition, as an ISO8601 date.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="pose">
+                                <xs:annotation>
+                                    <xs:documentation>Pose information is necessary when the 3D scan data is stored in a local coordinate system, which is relative to the sensor, as opposed to a file-based coordinate system. The rotation and translation information captured in pose allows for the transformation of the 3D data to a file-based coordinate system.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="rotation">
+                                            <xs:annotation>
+                                                <xs:documentation>These elements describe the scalar part of the quaternion (w), which shall be nonnegative, as well as the i (x), j (y) and k (z) coefficients of the quaternion.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="w"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="x"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="y"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="z"
+                                                  type="xs:float"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="translation">
+                                            <xs:annotation>
+                                                <xs:documentation>These elements describe the x, y and z coordinates of the translation, in meters.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="x"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="y"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="z"
+                                                  type="xs:float"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="index_bounds">
+                                <xs:annotation>
+                                    <xs:documentation>The points in of the scans can be organized in rows, columns or by return numbers. For the respective organization form in use, minimum and maximum values need to be defined to describe the valid indices for the bounds.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                        <xs:element maxOccurs="1" minOccurs="0" name="row_minimum"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="row_maximum"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="col_minimum"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="col_maximum"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="return_minimum" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="return_maximum" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="cartesian_bounds">
+                                <xs:annotation>
+                                    <xs:documentation>E57 may use two different coordinate systems: cartesian or spherical. If the cartesian coordinate system is used, the minimum and maximum values for the bounding region needs to be defined: the min. and max. extend in the x direction, min and max extend in the y direction and min. and max. extend in the z direction, in meter.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="1">
+                                        <xs:element maxOccurs="1" minOccurs="1" name="x_minimum"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="x_maximum"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="y_minimum"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="y_maximum"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="z_minimum"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="z_maximum"
+                                            type="xs:float"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="sphericalbounds">
+                                <xs:annotation>
+                                    <xs:documentation>E57 may use two different coordinate systems: cartesian or spherical. If the points are represented in spherical coordinates, the bounding region needs to be defined: min. and max. (range) extend in the r direction in meters t, min. and max. (elevation) extend in the phi direction in radians and min. and max. (azimuth) extend in the theta direction in radians.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="1">
+                                        <xs:element maxOccurs="1" minOccurs="1" name="range_minimum"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="range_maximum"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="elevation_minimum" type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="elevation_maximum" type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="azimuth_minimum" type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="azimuth_maximum" type="xs:float"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="intensity_limits">
+                                <xs:annotation>
+                                    <xs:documentation>The intensity describes the strength of the signal for a point. The intensity limits need to be defined if the points in the pointRecord of the  scans contain intensity information and if the sensor/scanner is has defined minimum and maximum values for the intensity which can be produced by the scanner/sensor. The standard does not define a unit for this element.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="intensity_minimum" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="intensity_maximum" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="color_limits">
+                                <xs:annotation>
+                                    <xs:documentation>PointRecords can be optionally described by color elements. These elements describe the limit of values for RGB, which the scanner is capable of producing. The standard does not prescribe a unit.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="1">
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="color_red_minimum" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="color_red_maximum" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="color_green_minimum" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="color_green_maximum" type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="color_blue_minimum" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="color_blue_maximum" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="1" name="pointSize"
+                                type="xs:integer">
+                                <xs:annotation>
+                                    <xs:documentation>Returns the number of records found in the respective scan.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="1" name="point_fields">
+                                <xs:annotation>
+                                    <xs:documentation>The point fields check the structure of the point records for the availability of standardized fields as well as the meaningfulness for some of the content. </xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="cartesian_fields">
+                                            <xs:annotation>
+                                                <xs:documentation>Checks for the existence of a pointer to a buffer with the x, y and z coordinates, returning true for the respective element. The cartesian_invalid_state_field indicates whether the content of the x, y and z fields are not meaningful.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence maxOccurs="1" minOccurs="1">
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="cartesian_x_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="cartesian_y_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="cartesian_z_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="cartesian_invalid_state_field"
+                                                  type="xs:boolean"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="spherical_fields">
+                                            <xs:annotation>
+                                                <xs:documentation>Checks for the existence of a pointer to a buffer with the x, y and z coordinates, returning true for the respective element. The spherical_invalid_state_field indicates whether the content of the x, y and z fields are not meaningful.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence maxOccurs="1" minOccurs="1">
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="spherical_range_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="spherical_elevation_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="spherical_azimuth_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="spherical_invalid_state_field"
+                                                  type="xs:boolean"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="point_range">
+                                            <xs:annotation>
+                                                <xs:documentation>Returns the values of point_range min. and max. values. The point_range_scaled_integer field either indicates that the point records should be configured as a scaled integer node, returning 1, or returns the float node.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="point_range_minimum" type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="point_range_maximum" type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="point_range_scaled_integer" type="xs:float"
+                                                  />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="angles">
+                                            <xs:annotation>
+                                                <xs:documentation>For scans in a spherical coordinate system, these values return the min. and max. angle which may be used. The angle_scaled_integer either returns a 1, indicating that the point record should be configured as a scaled integer node, or returns the float node.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="angle_minimum" type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="angle_maximum" type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="angle_scaled_integer" type="xs:float"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="index_fields">
+                                            <xs:annotation>
+                                                <xs:documentation>The index fields indicate if the respective index fields for the type of index (row, column, return) are active. For the return index, the count field is checked against being active as well. The maximum fields return the maximum values for the respective index, the minimum is assumed to be set to 0.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="row_index_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="row_index_maximum" type="xs:integer"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="column_index_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="column_index_maximum" type="xs:integer"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="return_index_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="return_count_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="return_maximum" type="xs:integer"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="time_fields">
+                                            <xs:annotation>
+                                                <xs:documentation>Checks for the presence and validity of a time_stamp in the file, returning true when time_stamp exists.Time_Maximum indicates a maximum values which point record time_stamp fields should be configured with.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="time_stamp_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="is_Time_Stamp_invalid" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="time_Maximum" type="xs:float"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="intensity_color_fields">
+                                            <xs:annotation>
+                                                <xs:documentation>Checks for the presence and use of intensity and color schemes in the respective fields, returning true when found. The intensity_scaled_integer field indicates either that the point record intensity fields should be configured as a scaled integer node (returning 1) or returns the float node or the integer node. The is_color_invalid_field indicates whether the content of the color fields for red, green and blue are not meaningful.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="intensity_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="is_intensity_invalid_field"
+                                                  type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="intensity_scaled_integer" type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="color_red_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="color_green_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="color_blue_field" type="xs:boolean"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1"
+                                                  name="is_color_invalid_field" type="xs:boolean"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="0" name="e57image">
+                    <xs:annotation>
+                        <xs:documentation>Information at the images level describes each 2D image contained within the E57 file.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="name" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>A name for the image as assigned by the user.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="1" name="guid" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Global unique identifier for each image element.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="representation"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Describes the representation type of the image. The representation type can either be defined by the spherical, cylindrical or pinhole camera projection model - or follow no camera projection model, in which case the image shall serve as a visual reference only.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="description"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>A description of the image as supplied by the user.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="acquisition_datetime"
+                                type="xs:dateTime">
+                                <xs:annotation>
+                                    <xs:documentation>Timestamp of the acquisition time of the image, as an ISO8601 date.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="associated_data3D_guid"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Lists the guid of the 3D scan image, which this image corresponds with.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_vendor"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>Manufactures of the sensor which was used to capture this image.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_model"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>The model name of the sensor which was used to capture this image.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="sensor_serial_number"
+                                type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>The serial number of the sensor which was used to capture this image.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="pose">
+                                <xs:annotation>
+                                    <xs:documentation>Pose information is necessary when the image data is stored in a local coordinate system, which is relative to the sensor, as opposed to a file-based coordinate system. The rotation and translation information captured in pose allows for the transformation of the Image data to a file-based coordinate system.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence minOccurs="0">
+                                        <xs:element maxOccurs="1" minOccurs="0" name="rotation">
+                                            <xs:annotation>
+                                                <xs:documentation>These elements describe the scalar part of the quaternion (w), which shall be nonnegative, as well as the i (x), j (y) and k (z) coefficients of the quaternion.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="w"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="x"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="y"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="z"
+                                                  type="xs:float"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="translation">
+                                            <xs:annotation>
+                                                <xs:documentation>These elements describe the x, y and z coordinates of the translation, in meters.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="x"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="y"
+                                                  type="xs:float"/>
+                                                  <xs:element maxOccurs="1" minOccurs="1" name="z"
+                                                  type="xs:float"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="visual_ref_representation">
+                                <xs:annotation>
+                                    <xs:documentation>These elements are used, if an image is to be used as a visual reference. The image is then described with the size of the image data (either jpeg or png) found in the blob node,  if used - the size of the image mask in the blob node as well as the image width and height in pixels.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="jpeg_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="png_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="image_mask_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_width"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_height"
+                                            type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="spherical_representation">
+                                <xs:annotation>
+                                    <xs:documentation>These elements are used for images which are mapped to 3D using the spherical camera projection model. The image is then described through the size of the image data (either jpeg or png) found in the blob node, if used - the size of the image mask in the blob node, the image width and heights in pixel as well as by the pixel’s width and height in radians.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="jpeg_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="png_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="image_mask_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_width"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_height"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="pixel_width"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="pixel_height"
+                                            type="xs:float"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="pinhole_representation">
+                                <xs:annotation>
+                                    <xs:documentation>These elements are used for images which are mapped to 3D using the pinhole camera projection model. The image is then described with the size of the image data (either jpeg or png) found in the blob node, if used - the size of the image mask in the blob node, the image width and height in pixel, the camera's focal length in meters, the pixels' width and height, both in meters, as well as the x and y coordinates of the principal point found in the image, in pixels.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="jpeg_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="png_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="image_mask_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_width"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_height"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="focal_length"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="pixel_width"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="pixel_height"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="principal_point_x" type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="principal_point_y" type="xs:float"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="cylindrical_representation">
+                                <xs:annotation>
+                                    <xs:documentation>These elements are used for images which are mapped to 3D using the cylindrical projection model. The image is then described with the size of the image data (either jpeg or png) found in the blob node, if used - the size of the image mask in the blob node, the image width and height in pixel, the camera’s focal length in meters, the pixels’ width in radians and height in meters as well as the radius of the cylinder in meters and the y coordinates of the principal point found in the image, in pixels.</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="jpeg_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="png_image_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="0"
+                                            name="image_mask_size" type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_width"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="image_height"
+                                            type="xs:integer"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="pixel_width"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="pixel_height"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="radius"
+                                            type="xs:float"/>
+                                        <xs:element maxOccurs="1" minOccurs="1"
+                                            name="principal_point_y" type="xs:float"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
