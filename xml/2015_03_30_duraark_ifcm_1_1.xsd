@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2015 rel. 3 (http://www.altova.com) von TIB/UB Hannover EDV (TIB/UB Hannover EDV) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" vc:minVersion="1.1">
+	<xs:element name="ifcm">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="header" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The following elements are extracted from the STEP physical file format header portion of the IFC file. They contain information about the creation process of the file as well as about the schema and view make-up of the digital object.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Name of digital object as used for data exchange, as taken from the name attribute in IFC header's FILE_NAME entity.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="creationDate" type="xs:dateTime" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Creation date of IFC file in ISO 8601 format, as taken from the time_stamp attribute in IFC header's FILE_NAME entity.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="author" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Creator of IFC file, as taken from the author attribute in IFC header's FILE_NAME entity.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="organization" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Organization, which the creator of the IFC file is associated with, as taken from the organization attribute in IFC header's FILE_NAME entity.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="preprocessor" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Name and version of the toolbox used to create the IFC file, as taken from the preprocessor_version attribute in IFC header's FILE_NAME entity.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="originatingSystem" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Name and version of the CAD system or other application used to generate the IFC file, including the build information, where possible. As taken from the originating_system attribute in IFC header's FILE_NAME entity.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="authorization" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Name and address of the person / organization who authorized the transfer of the IFC file, as taken from the authorization attribute in IFC header's FILE_NAME entity.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="fileSchema" type="xs:string" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Schema version of the IFC file, as taken from the FILE_SCHEMA entity in the IFC header file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="viewDefinition" type="xs:string" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes one or more model view definitions of the IFC File, as taken from the view_defintion attribute of the FILE_DESCRIPTION entity in the IFC header file. Values for view definitions have to be formally agreed upon by buildingSMART.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="exportOptions" type="xs:string" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes export options or additional filters used for the IFC generation, as taken from the FILE_DESCRIPTION entity in the IFC header file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ifcparameters" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>The ifcParameters are values from corresponding IFC entities. For transparency reasons, the name of the ifcm elements are congruent with the name of the corresponding IFC entity.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="ifcApplication" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Describes software involved in the IFC/BIM process of the object, as taken from the ifcApplication enitity. The notation includes application developer, version, application full name and identifier.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="IfcGeometricRepresentationContext" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Describes the context in which applies to a group of geometric shapes in the file including the representation context group (model or plan with respective subgroups), the dimension count of the coordinate space the representation is modelled in, the precision or tolerance with which two points are assumed to be identical to each other and the TrueNorth or offset from the project's coordinate system (optional).</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ifcSiUnit" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Describes the units which apply to different measure in the IFC file, stating the dimension to be measured and the unit applied. This does not only apply to length, area and mass units but to all subjects included in the BIM process such as  electricity, light, thermo dynamics or time.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="quantities" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>This group contains counts for various basic entities within the ifc object.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="floorCount" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of floors / storeys which are modelled in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="roomCount" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of rooms which are modelled in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="wallCount" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of walls which are modelled in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="windowsCount" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of windows which are modelled in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="doorCount" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of doors which are modelled in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="pipeCount" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of pipes which are modelled in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="columnCount" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of columns which are modelled in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="numberOfComponents" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the total number IfcProduct subtypes which have been instantiated in the object (counts al doors, windows, roofs, walls, etc.).</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="numberOfRelations" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the total number relations - internal as well as external - which are used in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="numberOfActors" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of actors which are listed in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="informationMetric" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>This group contains elements which are based on counted and/or calculated values of entities.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="numberOfEntityTypesUsed" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the number of different entities which are used in the IFC file. Each different entity is only counted once, regardless of how many times it is instantiated in the file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="numberOfTotalEntitiesUsed" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Gives the total count of entities which are used in the IFC file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="optionalAttributes" type="xs:integer" minOccurs="0" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Describes the percentage of OPTIONAL schema-level attributed which are provided with values in this file.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Dependencies" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>This group contains information about internal or external dependencies of the IFC object. The element contained within is an aggregate of various entities.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="1" maxOccurs="1">
+							<xs:element name="webResourceLink" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Describes every web resource (URL) which the IFC links to, including from which entity type in the IFC file it was referenced from and how many times it was linked from that type.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

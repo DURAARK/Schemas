@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2015 rel. 3 (http://www.altova.com) von TIB/UB Hannover EDV (TIB/UB Hannover EDV) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<xs:element name="buildm">
+		<xs:annotation>
+			<xs:documentation>DURAARK - descriptive metadata schema for building information </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="physicalAsset">
+					<xs:annotation>
+						<xs:documentation>Descriptive metadata about the tangible building.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Identifier" type="xs:string" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A nonambiguous reference of the phyiscal asset within a given context.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="name" type="xs:string" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Title or name of the building, usually consisting of a combination of function and location.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="latitude" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>The latitude of the physical asset’s location in decimal degrees.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="longitude" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>The longitutde of the physical asset’s location in decimal degrees.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="owner" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Person or organization who owns the physical asset. The element may be repeated to described different owners.
+</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="buildingArea" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Total floor area inside the building, including the measuring unit.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="floorCount" type="xs:integer" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Total number of floors of the physical asset, including basement, sub-basement, ground and top levels.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="numberOfRooms" type="xs:integer" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Total number of rooms of the physical asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="function" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Current or intended use of the Physical Asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="architecturalStyle" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Architectural Style of the Physical Asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A description of the physical asset, e.g. to give historical background or further describe the status.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="location" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>A general description of the Physical Asset’s location.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="streetAddress" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The street address corresponding to the Physical Asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="postalCodeStart" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The postal code which corresponds to the location of the physical asset. If the physical asset is in a range of postal codes, for example if it describes a large appartment complex which spans over several postal codes, then this element marks the starting value of the postal code range. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="postalCodeEnd" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If an address of a physical asset spans over several postal codes, e.g. for a large appartment complex, the starting postal code of the range is noted in postalCodeStart and the end of the range is noted in postalCodeEnd. In the case of addresses which just have one postal code, this value is empty.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="postOfficeBoxNumber" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>If the mailing address of the physical asset includes a post office box number, this number is described in this field.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="addressRegion" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The region corresponding to the location of the physical asset, such as a state, province or area designation.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="addressCountry" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The country or nation corresponding to the location of the physical asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="postalLocality" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The town / locality corresponding to the location of the physical asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="architect" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The architect(s) of the physical asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="contributor" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A person who contributed to the construction of the physical asset, e.g. the structural engineer or stone mason. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="startDate" type="xs:integer" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Year when the construction phase of the physical asset began.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="completionDate" type="xs:integer" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Year when the construction phase of the physical asset was completed.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="constructionTime" type="xs:integer" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Duration of the construction phase of the physical asset in days.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="rebuildingDate" type="xs:date" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Year when the rebuilding date of the physical asset began.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="modificationDetails" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Explanation of the modification of the physical asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="cost" type="xs:double" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Financial efforts which were needed for realizing the constructino of the physical asset, in USD. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="rightsDetails" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Information about rights, such as copyrights, license information or regulatory requirements related to the Physical Asset.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="digitalObject" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Descriptive metadata about the digital object containing a representation of the physical asset, such as a plan or a scan.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Identifier" type="xs:string" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A nonambigious reference of the digital object within a given context. Where possible, formal identification systems should be used.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="creator" type="xs:string" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Creator/author of the digital object.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="name" type="xs:string" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>The name of the digital object. This may be the file name or reflect on the data which is inside the object.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="dateCreated" type="xs:dateTime">
+								<xs:annotation>
+									<xs:documentation>The date the digital object was created.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="filesize" type="xs:integer">
+								<xs:annotation>
+									<xs:documentation>The filesize of the digital object specified in byte.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="isPartOf" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Links the digital object to an overaching digital object it is a part of, e.g. in the case of plans for different fllors the object may link to an overall plan view of all the physical asset’s rooms. The corresponding overaching object shall be identified through it’s identifier.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="hasPart" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Links the digital object to child objects it may be related to, e.g. in the case of scans of the different floors which the overaching building representation may link to. The children objects sjall be referenced through their identifiers.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="format" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The media type format of the digital object. Recommendation is to use the mime type to fill this value. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="hasType" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The type of this digital object, e.g. plan or scan.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="hasFormatDetails" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Additional information out the digital object, e.g. it’s encoding or compression information</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A description of the digital object, e.g. to give information of how and why the object was created.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="provenance" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>A statement of any changes in ownership and custody of the digital object since its creation that are significant for its authenticity, integrity, and interpretation.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="license" type="xs:anyURI" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>A link to the license information to the digital object.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="unitCode" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The unit of measurement given using the UN/CEFACT Common Code (3 characters). This determines in which unit properties corresponding to the Digital Object are entered.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="levelOfDetail" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The level of detail / level of development (LOD) in which the physical asset is described / captured in the digital object. If a standard reference system is used to describe the LOD, the system shall be named with the value. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="event" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Information for what the digital object was used for, such as in the case of digital objects created for presentations or competitions.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
