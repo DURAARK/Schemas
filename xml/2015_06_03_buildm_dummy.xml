@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML-Beispieldatei von XMLSpy generiert v2015 rel. 3 (http://www.altova.com)-->
+<buildm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="2015_03_30_duraark_buildm_2_2.xsd">
+	<physicalAsset>
+        <Identifier>UTS:CB71.02.04</Identifier>
+        <name>Cologne Cathedral</name>
+        <latitude>50.9411111</latitude>
+        <longitude>6.95805555</longitude>
+        <owner>Hohe Domkirche zu Koln (corporate body under public law)</owner>
+        <buildingArea>7914 sqm</buildingArea>
+        <floorCount>6</floorCount>
+        <numberOfRooms>36</numberOfRooms>
+        <function>religious building; cathedral</function>
+        <architecturalStyle>gothic; neoclassicism</architecturalStyle>
+        <description>The Cologne Cathedral is Germany's most visited landmark. Construction started in 1248, paused between 1473 and 1842 and was completed in 1880.</description>
+		  <location>Domhügel</location>
+        <streetAddress>Domkloster 4</streetAddress>
+        <postalCodeStart>50667</postalCodeStart>
+        <postalCodeEnd>50668</postalCodeEnd>
+        <postOfficeBoxNumber>1234</postOfficeBoxNumber>
+        <addressRegion>NRW - North Rhine-Westphalia</addressRegion>
+		<addressCountry>Germany</addressCountry>
+	     <postalLocality>Cologne</postalLocality>
+        <architect>Meister Gerhard; Barbara Schock-Werner</architect>
+        <contributor>Gerhard Richter</contributor>
+        <startDate>1248</startDate>
+        <completionDate>1880</completionDate>
+        <constructionTime>230888</constructionTime>
+        <rebuildingDate>1944-01-01</rebuildingDate>
+        <modificationDetails>During 1944-1956 repairs of the damages which occurred during World War II were undertaken.</modificationDetails>
+        <cost>100000000.00</cost>
+        <rightsDetails>The Cologne Cathedral is a UNESCO World Heritage site. Special construction requirements apply.</rightsDetails>
+	</physicalAsset>
+	<digitalObject>
+		<Identifier>ark:/12148/btv1b8448858m</Identifier>
+        <creator>John Smith</creator>
+        <name>Scan 8.Sept.2013 Cologne Cathedral</name>
+        <dateCreated>2013-09-08T00:35:00</dateCreated>
+		<filesize>131342352352</filesize>
+		<isPartOf>ark:/12148/btv1b8448858m</isPartOf>
+        <hasPart>ark:/12148/btv1b8448858m</hasPart>
+        <format>Undedefined</format>
+		 <hasType>Scan</hasType>
+        <hasFormatDetails>binary; E57</hasFormatDetails>
+        <description>This scan was created in July 2014 to document the sculptures along the main portal of the cathedral.</description>
+        <provenance>The scans were created by the company xyz on behalf of the Domkapitel.</provenance>
+		<license>https://creativecommons.org/publicdomain/zero/1.0</license>
+        <unitCode>mm</unitCode>
+        <levelOfDetail>CityGML LOD 3</levelOfDetail>
+        <event>CAD Fair 2014</event>
+	</digitalObject>
+</buildm>

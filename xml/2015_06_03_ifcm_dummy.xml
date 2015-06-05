@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML-Beispieldatei von XMLSpy generiert v2015 rel. 3 (http://www.altova.com)-->
+<ifcm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="2015_03_30_duraark_ifcm_1_1.xsd">
+	<header>
+        <name>Plan Hartnett Hall, Minot State University Campus</name>
+        <creationDate>2013-05-28T10:23:19</creationDate>
+        <author>John Doe</author>
+        <organization>Architecture and Construction Ltd.</organization>
+        <preprocessor>DDS-IFC v2.0</preprocessor>
+        <originatingSystem>DDS-CAD Version 8.0 Win32 build 29/6-2012</originatingSystem>
+        <authorization>Fred Miller, Architecture and Construction Ltd.</authorization>
+        <fileSchema>IFC2x3</fileSchema>
+        <viewDefinition>FMHandOverView</viewDefinition>
+        <exportOptions>Build Number of the IFC 2X2 interface: 02550 (26-09-2003)</exportOptions>
+	</header>
+	<ifcparameters>
+       <ifcApplication>ArchiCAD 7.0</ifcApplication>
+        <IfcGeometricRepresentationContext>('Model',3,1.00000000000000E-6)</IfcGeometricRepresentationContext>
+        <ifcSiUnit>(LENGTHUNIT,METRE)</ifcSiUnit>
+	</ifcparameters>
+	<quantities>
+        <floorCount>4</floorCount>
+        <roomCount>64</roomCount>
+        <wallCount>420</wallCount>
+        <windowsCount>105</windowsCount>
+        <doorCount>72</doorCount>
+        <pipeCount>34</pipeCount>
+        <columnCount>60</columnCount>
+        <numberOfComponents>11423</numberOfComponents>
+        <numberOfRelations>5218</numberOfRelations>
+        <numberOfActors>5</numberOfActors>
+	</quantities>
+    <informationMetric>
+        <numberOfEntityTypesUsed>364</numberOfEntityTypesUsed>
+        <numberOfTotalEntitiesUsed>2954</numberOfTotalEntitiesUsed>
+        <optionalAttributes>57</optionalAttributes>
+    </informationMetric>
+    <Dependencies>
+        <webResourceLink>http://www.armaturjonsson.no/novus/upload/article/rorprodukter/PDFror/classicweb.pdf</webResourceLink>
+    </Dependencies>
+</ifcm>
