@@ -438,7 +438,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element maxOccurs="1" minOccurs="0" name="e57image">
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="e57image">
                     <xs:annotation>
                         <xs:documentation>Information at the images level describes each 2D image contained within the E57 file.</xs:documentation>
                     </xs:annotation>
