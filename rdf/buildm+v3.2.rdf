@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-     xml:base="http://data.duraark.eu/vocab/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:void="http://rdfs.org/ns/void#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:xs="http://www.w3.org/TR/xmlschema11-2/#"
-     xmlns:cw="http://schema.org/CreativeWork"
-     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	 xml:base="http://data.duraark.eu/vocab/"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns:dcterms="http://purl.org/dc/terms/"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	 xmlns:void="http://rdfs.org/ns/void#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:xs="http://www.w3.org/TR/xmlschema11-2/#"
+	 xmlns:cw="http://schema.org/CreativeWork"
+	 xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
   <rdf:Description rdf:about="http://data.duraark.eu/vocab/">
-     <dcterms:title xml:lang="en"></dcterms:title>
-         <rdfs:comment xml:lang="en">The 'buildm' schema has been developed in context of the DURAARK project.</rdfs:comment>
+	 <dcterms:title xml:lang="en"></dcterms:title>
+		 <rdfs:comment xml:lang="en">The 'buildm' schema has been developed in context of the DURAARK project.</rdfs:comment>
 			<owl:versionInfo>3.1, June 24, 2015</owl:versionInfo>
 			<dcterms:creator>
 				<rdf:Description>
@@ -67,7 +67,7 @@
 				</rdf:Description>
 			</dcterms:contributor>
 
-     </rdf:Description>
+	 </rdf:Description>
 
 	<!-- Classes -->
 
@@ -99,12 +99,12 @@
 		<rdfs:domain rdf:resource="DigitalObject"/>
 		<rdfs:range>
 			 <owl:Class>
-            			<owl:unionOf rdf:parseType="Collection">
-                			<owl:Class rdf:about="http://schema.org/Person"/>
-                			<owl:Class rdf:about="http://schema.org/Organization"/>
-            			</owl:unionOf>
-        		</owl:Class>
-        	</rdfs:range>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="http://schema.org/Person"/>
+							<owl:Class rdf:about="http://schema.org/Organization"/>
+						</owl:unionOf>
+				</owl:Class>
+			</rdfs:range>
 		<owl:equivalentProperty rdf:resource="http://schema.org/creator" />
 	</rdf:Property>
 
@@ -236,11 +236,11 @@
 		<rdfs:comment>A description of this Digital Object or Physical Asset.</rdfs:comment>
 		<rdfs:domain>
 			 <owl:Class>
-            			<owl:unionOf rdf:parseType="Collection">
-                			<owl:Class rdf:about="DigitalObject"/>
-                			<owl:Class rdf:about="PhysicalAsset"/>
-            			</owl:unionOf>
-        		</owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="DigitalObject"/>
+							<owl:Class rdf:about="PhysicalAsset"/>
+						</owl:unionOf>
+				</owl:Class>
 		</rdfs:domain>
 		<rdfs:range rdf:resource="http://schema.org/Text"/>
 		<owl:equivalentProperty rdf:resource="http://schema.org/description" />
@@ -251,11 +251,11 @@
 		<rdfs:comment>A unique identifier (UUID) that represents either the Digital Object or Physical Asset.</rdfs:comment>
 		<rdfs:domain>
 			 <owl:Class>
-            			<owl:unionOf rdf:parseType="Collection">
-                			<owl:Class rdf:about="DigitalObject"/>
-                			<owl:Class rdf:about="PhysicalAsset"/>
-            			</owl:unionOf>
-        		</owl:Class>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="DigitalObject"/>
+							<owl:Class rdf:about="PhysicalAsset"/>
+						</owl:unionOf>
+				</owl:Class>
 		</rdfs:domain>
 		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 		<owl:equivalentProperty rdf:resource="http://purl.org/dc/elements/1.1/identifier" />
@@ -307,7 +307,7 @@
 		<owl:equivalentProperty rdf:resource="http://schema.org/unitCode" />
 	</rdf:Property>
 
-    <rdf:Property rdf:about="unit">
+	<rdf:Property rdf:about="unit">
 		<rdfs:label>unit</rdfs:label>
 		<rdfs:comment>The unit of recorded as a reference to QUDT unit ontology.</rdfs:comment>
 		<rdfs:domain rdf:resource="DigitalObject"/>
@@ -343,12 +343,12 @@
 		<rdfs:domain rdf:resource="PhysicalAsset"/>
 		<rdfs:range>
 			 <owl:Class>
-            			<owl:unionOf rdf:parseType="Collection">
-                			<owl:Class rdf:about="http://schema.org/Person"/>
-                			<owl:Class rdf:about="http://schema.org/Organization"/>
-            			</owl:unionOf>
-        		</owl:Class>
-        	</rdfs:range>
+						<owl:unionOf rdf:parseType="Collection">
+							<owl:Class rdf:about="http://schema.org/Person"/>
+							<owl:Class rdf:about="http://schema.org/Organization"/>
+						</owl:unionOf>
+				</owl:Class>
+			</rdfs:range>
 	</rdf:Property>
 
 	<rdf:Property rdf:about="completionDate">
@@ -540,20 +540,20 @@
 	</rdf:Property>
 
 	<rdf:Property rdf:about="represents">
-        	<rdfs:label>represents</⁠⁠rdfs:label>
-        	<rdfs:comment>This represents a PhysicalAsset (or part of a PhysicalAsset). For instance, a building (or part of) or architectural structure.</rdfs:comment>
-        	<rdfs:domain rdf:resource="DigitalObject"/>
-        	<rdfs:range rdf:resource="PhysicalAsset"/>
-        	<owl:inverseOf rdf:resource="http://data.duraark.eu/vocab/buildm/isRepresentedBy"/>
-    	</⁠⁠rdf:Property>
+		<rdfs:label>represents</⁠⁠rdfs:label>
+		<rdfs:comment>This represents a PhysicalAsset (or part of a PhysicalAsset). For instance, a building (or part of) or architectural structure.</rdfs:comment>
+		<rdfs:domain rdf:resource="DigitalObject"/>
+		<rdfs:range rdf:resource="PhysicalAsset"/>
+		<owl:inverseOf rdf:resource="http://data.duraark.eu/vocab/buildm/isRepresentedBy"/>
+	</⁠⁠rdf:Property>
 
-    	<rdf:Property rdf:about="isRepresentedBy">
-       		 <rdfs:label>represents</⁠⁠rdfs:label>
-        	<rdfs:comment>This DigitalObject represents a PhysicalAsset (or part of a PhysicalAsset). For instance, a building (or part of) or architectural structure.</rdfs:comment>
-		<rdfs:domain rdf:resource="PhysicalAsset"/>
-        	<rdfs:range rdf:resource="DigitalObject"/>
-        	<owl:inverseOf rdf:resource="http://data.duraark.eu/vocab/buildm/represents"/>
-    	</⁠⁠rdf:Property>
+	<rdf:Property rdf:about="isRepresentedBy">
+		 <rdfs:label>represents</⁠⁠rdfs:label>
+		<rdfs:comment>This DigitalObject represents a PhysicalAsset (or part of a PhysicalAsset). For instance, a building (or part of) or architectural structure.</rdfs:comment>
+	<rdfs:domain rdf:resource="PhysicalAsset"/>
+		<rdfs:range rdf:resource="DigitalObject"/>
+		<owl:inverseOf rdf:resource="http://data.duraark.eu/vocab/buildm/represents"/>
+	</⁠⁠rdf:Property>
 
 
 </rdf:RDF>
