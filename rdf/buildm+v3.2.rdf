@@ -1,73 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-	 xml:base="http://data.duraark.eu/vocab/"
-	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:dcterms="http://purl.org/dc/terms/"
-	 xmlns:owl="http://www.w3.org/2002/07/owl#"
-	 xmlns:foaf="http://xmlns.com/foaf/0.1/"
-	 xmlns:void="http://rdfs.org/ns/void#"
-	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-	 xmlns:xs="http://www.w3.org/TR/xmlschema11-2/#"
-	 xmlns:cw="http://schema.org/CreativeWork"
-	 xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
-	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	xml:base="http://data.duraark.eu/vocab/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:void="http://rdfs.org/ns/void#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:xs="http://www.w3.org/TR/xmlschema11-2/#"
+	xmlns:cw="http://schema.org/CreativeWork"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
-  <rdf:Description rdf:about="http://data.duraark.eu/vocab/">
-	 <dcterms:title xml:lang="en"></dcterms:title>
-		 <rdfs:comment xml:lang="en">The 'buildm' schema has been developed in context of the DURAARK project.</rdfs:comment>
-			<owl:versionInfo>3.1, June 24, 2015</owl:versionInfo>
-			<dcterms:creator>
-				<rdf:Description>
-					<foaf:name>Ujwal Gadiraju</foaf:name>
-					<foaf:organization>L3S Research Center</foaf:organization>
-					<foaf:mbox>gadiraju@l3s.de</foaf:mbox>
-				</rdf:Description>
-			</dcterms:creator>
-			<dcterms:creator>
-				<rdf:Description>
-					<foaf:name>Besnik Fetahu</foaf:name>
-					<foaf:organization>L3S Research Center</foaf:organization>
-					<foaf:mbox>fetahu@l3s.de</foaf:mbox>
-				</rdf:Description>
-			</dcterms:creator>
-			<dcterms:creator>
-				<rdf:Description>
-					<foaf:name>Stefan Dietze</foaf:name>
-					<foaf:organization>L3S Research Center</foaf:organization>
-					<foaf:mbox>dietze@l3s.de</foaf:mbox>
-				</rdf:Description>
-			</dcterms:creator>
-			<dcterms:creator>
-				<rdf:Description>
-					<foaf:name>Michelle Lindlar</foaf:name>
-					<foaf:organization>TIB</foaf:organization>
-					<foaf:mbox>Michelle.Lindlar@tib.uni-hannover.de</foaf:mbox>
-				</rdf:Description>
-			</dcterms:creator>
-			<dcterms:creator>
-				<rdf:Description>
-					<foaf:name>Michael Panitz</foaf:name>
-					<foaf:organization>TIB</foaf:organization>
-					<foaf:mbox>Michael.Panitz@tib.uni-hannover.de</foaf:mbox>
-				</rdf:Description>
-			</dcterms:creator>
-			<dcterms:contributor>
-				<rdf:Description>
-					<foaf:name>Jakob Beetz</foaf:name>
-					<foaf:organization>Eindhoven University of Technology</foaf:organization>
-					<foaf:mbox>j.beetz@tue.nl</foaf:mbox>
-				</rdf:Description>
-			</dcterms:contributor>
-			<dcterms:contributor>
-				<rdf:Description>
-					<foaf:name>Thomas Krijnen</foaf:name>
-					<foaf:organization>Eindhoven University of Technology</foaf:organization>
-					<foaf:mbox>t.f.krijnen@tue.nl</foaf:mbox>
-				</rdf:Description>
-			</dcterms:contributor>
-
-	 </rdf:Description>
+	<rdf:Description rdf:about="http://data.duraark.eu/vocab/">
+		<dcterms:title xml:lang="en"></dcterms:title>
+		<rdfs:comment xml:lang="en">The 'buildm' schema has been developed in context of the DURAARK project.</rdfs:comment>
+		<owl:versionInfo>3.1, June 24, 2015</owl:versionInfo>
+		<dcterms:creator>
+			<rdf:Description>
+				<foaf:name>Ujwal Gadiraju</foaf:name>
+				<foaf:organization>L3S Research Center</foaf:organization>
+				<foaf:mbox>gadiraju@l3s.de</foaf:mbox>
+			</rdf:Description>
+		</dcterms:creator>
+		<dcterms:creator>
+			<rdf:Description>
+				<foaf:name>Besnik Fetahu</foaf:name>
+				<foaf:organization>L3S Research Center</foaf:organization>
+				<foaf:mbox>fetahu@l3s.de</foaf:mbox>
+			</rdf:Description>
+		</dcterms:creator>
+		<dcterms:creator>
+			<rdf:Description>
+				<foaf:name>Stefan Dietze</foaf:name>
+				<foaf:organization>L3S Research Center</foaf:organization>
+				<foaf:mbox>dietze@l3s.de</foaf:mbox>
+			</rdf:Description>
+		</dcterms:creator>
+		<dcterms:creator>
+			<rdf:Description>
+				<foaf:name>Michelle Lindlar</foaf:name>
+				<foaf:organization>TIB</foaf:organization>
+				<foaf:mbox>Michelle.Lindlar@tib.uni-hannover.de</foaf:mbox>
+			</rdf:Description>
+		</dcterms:creator>
+		<dcterms:creator>
+			<rdf:Description>
+				<foaf:name>Michael Panitz</foaf:name>
+				<foaf:organization>TIB</foaf:organization>
+				<foaf:mbox>Michael.Panitz@tib.uni-hannover.de</foaf:mbox>
+			</rdf:Description>
+		</dcterms:creator>
+		<dcterms:contributor>
+			<rdf:Description>
+				<foaf:name>Jakob Beetz</foaf:name>
+				<foaf:organization>Eindhoven University of Technology</foaf:organization>
+				<foaf:mbox>j.beetz@tue.nl</foaf:mbox>
+			</rdf:Description>
+		</dcterms:contributor>
+		<dcterms:contributor>
+			<rdf:Description>
+				<foaf:name>Thomas Krijnen</foaf:name>
+				<foaf:organization>Eindhoven University of Technology</foaf:organization>
+				<foaf:mbox>t.f.krijnen@tue.nl</foaf:mbox>
+			</rdf:Description>
+		</dcterms:contributor>
+	</rdf:Description>
 
 	<!-- Classes -->
 
@@ -548,12 +547,31 @@
 	</⁠⁠rdf:Property>
 
 	<rdf:Property rdf:about="isRepresentedBy">
-		 <rdfs:label>represents</⁠⁠rdfs:label>
+		<rdfs:label>represents</⁠⁠rdfs:label>
 		<rdfs:comment>This DigitalObject represents a PhysicalAsset (or part of a PhysicalAsset). For instance, a building (or part of) or architectural structure.</rdfs:comment>
 	<rdfs:domain rdf:resource="PhysicalAsset"/>
 		<rdfs:range rdf:resource="DigitalObject"/>
 		<owl:inverseOf rdf:resource="http://data.duraark.eu/vocab/buildm/represents"/>
 	</⁠⁠rdf:Property>
 
+	<rdf:Property rdf:about="averageWallThickness">
+		<rdfs:label>averageWallThickness</rdfs:label>
+		<rdfs:comment>The average wall thickness within this Physical Asset.</rdfs:comment>
+		<rdfs:domain rdf:resource="PhysicalAsset"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+	</rdf:Property>
 
+	<rdf:Property rdf:about="totalWindowArea">
+		<rdfs:label>totalWindowArea</rdfs:label>
+		<rdfs:comment>The total window area within this Physical Asset.</rdfs:comment>
+		<rdfs:domain rdf:resource="PhysicalAsset"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="totalWireLength">
+		<rdfs:label>totalWireLength</rdfs:label>
+		<rdfs:comment>The total wire length within this Physical Asset.</rdfs:comment>
+		<rdfs:domain rdf:resource="PhysicalAsset"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+	</rdf:Property>
 </rdf:RDF>
