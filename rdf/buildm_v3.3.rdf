@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-	xml:base="http://data.duraark.eu/vocab/"
+	xml:base="http://data.duraark.eu/vocab/buildm/"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
 	xmlns:dcterms="http://purl.org/dc/terms/"
@@ -13,7 +13,7 @@
 	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
-	<rdf:Description rdf:about="http://data.duraark.eu/vocab/">
+	<rdf:Description rdf:about="http://data.duraark.eu/vocab/buildm/">
 		<dcterms:title xml:lang="en"></dcterms:title>
 		<rdfs:comment xml:lang="en">The 'buildm' schema has been developed in context of the DURAARK project.</rdfs:comment>
 		<owl:versionInfo>3.1, June 24, 2015</owl:versionInfo>
